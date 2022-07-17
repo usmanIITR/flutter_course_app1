@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
   final VoidCallback callbackFunction;
-  Answer(this.callbackFunction);
+  final String answerText;
+  Answer(this.callbackFunction, this.answerText);
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: RaisedButton(
         color: Colors.deepOrangeAccent,
+        textColor: Colors.cyanAccent,
         onPressed: callbackFunction,
-        child: const Text("Answer 1"),),
+        child: Text(answerText),
+      ),
     );
   }
 }
